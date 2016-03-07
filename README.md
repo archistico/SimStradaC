@@ -10,6 +10,6 @@ Assunti:
 Da fare
 - [X] dati generali
 - [X] creazione guidatore
-- [] creazione veicolo
-- [] creazione strada
-- [] creazione semaforo
+- [ ] creazione veicolo
+- [ ] creazione strada
+- [ ] creazione semaforo
