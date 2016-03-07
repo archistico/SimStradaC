@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Debug\
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\
 SimStradaC
 none
 false
-DEBUG;TRACE
+TRACE
 D:\Programmazione\00Github\SimStradaC\SimStradaC\App.xaml
 11151548125
 
-11-1024114133
+10-869021242
 13738642453
 MainWindow.xaml;
 

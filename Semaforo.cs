@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SimStradaC
 {
@@ -16,21 +17,34 @@ namespace SimStradaC
         public double durataVerde;
         public double durataSovrapposizioneRosso;
         public double durataSicurezza;
+        public double durataTotale;
 
         private double tempoUltimoCambiamento;
+
+        public void Debugga()
+        {
+            Debug.WriteLine("------------------");
+            Debug.WriteLine("CREAZIONE SEMAFORO");
+            Debug.WriteLine("Durata verde: " + Math.Round(durataVerde, 2));
+            Debug.WriteLine("Durata giallo: " + Math.Round(durataGiallo, 2));
+            Debug.WriteLine("Durata rosso: " + Math.Round(durataRosso, 2));
+            Debug.WriteLine("Durata sovrapposizione rosso: " + Math.Round(durataSovrapposizioneRosso, 2));
+            Debug.WriteLine("Durata sicurezza: " + Math.Round(durataSicurezza, 2));
+            Debug.WriteLine("Durata totale ciclo: " + Math.Round(durataTotale, 2));
+        }
 
         public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce)
         {
             stradaDirezione = _stradaDirezione;
             posizioneX = _posizioneX;
             semaforoLuce = _semaforoLuce;
-
             durataRosso = DatiGenerali.Semaforo.DurataRosso;
             durataGiallo = DatiGenerali.Semaforo.DurataGiallo;
             durataVerde = DatiGenerali.Semaforo.DurataVerde;
-
             durataSovrapposizioneRosso = DatiGenerali.Semaforo.DurataSovrapposizioneRosso;
             durataSicurezza = DatiGenerali.Semaforo.DurataSicurezza;
+            durataTotale = durataVerde + durataGiallo + durataRosso;
+            Debugga();
         }
 
         public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _durataVerde, double _durataGiallo, double _durataSovrapposizioneRosso, double _durataSicurezza)
@@ -43,6 +57,8 @@ namespace SimStradaC
             durataSovrapposizioneRosso = _durataSovrapposizioneRosso;
             durataSicurezza = _durataSicurezza;
             durataRosso = durataVerde + durataGiallo + 2 * durataSovrapposizioneRosso + 2 * durataSicurezza;
+            durataTotale = durataVerde + durataGiallo + durataRosso;
+            Debugga();
         }
 
         public void Ciclo()

@@ -28,19 +28,28 @@ namespace SimStradaC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // Creazione guidatori
             var Mamma = new Guidatore(GuidatoreTipologia.Prudente);
             var Emilie = new Guidatore(GuidatoreTipologia.Normale);
 
+            // Creazioni veicoli
             var primo = new Veicolo(VeicoloTipologia.Macchina, Emilie, StradaDirezione.DX);
             var secondo = new Veicolo(VeicoloTipologia.Macchina, Emilie, StradaDirezione.DX, primo);
                         
-            StringBuilder testoRisultati = new StringBuilder();
+            // Calcolo tempo di percorrenza
+            double durataSovrapposizioneRosso = Configuratore.TempoMinimoPercorrenza(120, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
+            durataSovrapposizioneRosso = Utilita.ApprossimaMaggiore(durataSovrapposizioneRosso, 5);
 
-            var sem = new Semaforo(StradaDirezione.DX, 0, SemaforoLuce.Verde);
+            // Creazione semaforo
+            var sem = new Semaforo(StradaDirezione.DX, 0, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
 
             // Inizio simulazione
             Tempo.Ora = 0;
 
+            // Per i risultati
+            StringBuilder testoRisultati = new StringBuilder();
+
+            // SIMULAZIONE PER X VOLTE L'INTERVALLO DEFINITO
             for (int i = 0; i < 200; i++)
             {
                 sem.Ciclo();
@@ -50,9 +59,8 @@ namespace SimStradaC
                 
                 Tempo.Ora += DatiGenerali.Simulazione.Intervallo;
             }
-
-            double TP = Configuratore.TempoPercorrenza(100, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
-            
+                     
+            // Visualizza i risultati
             tbRisultati.Text = testoRisultati.ToString();
         }
     }

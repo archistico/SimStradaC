@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Configuratore.cs" />
     <Compile Include="Semaforo.cs" />
+    <Compile Include="Utilita.cs" />
     <Compile Include="Veicolo.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

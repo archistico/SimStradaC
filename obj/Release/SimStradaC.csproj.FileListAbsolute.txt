@@ -1,0 +1,13 @@
+D:\Programmazione\00Github\SimStradaC\SimStradaC\bin\Release\SimStradaC.exe.config
+D:\Programmazione\00Github\SimStradaC\SimStradaC\bin\Release\SimStradaC.exe
+D:\Programmazione\00Github\SimStradaC\SimStradaC\bin\Release\SimStradaC.pdb
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\MainWindow.g.cs
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\App.g.cs
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC_MarkupCompile.cache
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC_MarkupCompile.lref
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\MainWindow.baml
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC.g.resources
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC.Properties.Resources.resources
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC.csproj.GenerateResource.Cache
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC.exe
+D:\Programmazione\00Github\SimStradaC\SimStradaC\obj\Release\SimStradaC.pdb
