@@ -10,16 +10,16 @@ Assunti:
 Configurazione (Costanti.cs):
 
 DatiGenerali
-- Semaforo
+1. Semaforo
 * // [s]
 * DurataRosso = 60; 
 * DurataGiallo = 20; 
 * DurataVerde = 60;
 * DurataRitardo = 60;
-- Simulazione
+2. Simulazione
 * // [s]
 * Intervallo = 1; 
-- GuidatoreTipologia
+3. GuidatoreTipologia
 * Normale
 * // [s]
 * TempoReazione = 1;
@@ -32,8 +32,7 @@ DatiGenerali
 * DistanzaFermi = 1.5;
 * // [m]
 * DistanzaVisione = 50;
- 
--- Prudente
+* Prudente
 {
     // [s]
     TempoReazione = 0.85;
