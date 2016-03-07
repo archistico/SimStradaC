@@ -10,29 +10,30 @@ Assunti:
 Configurazione (Costanti.cs):
 
 DatiGenerali
+
 1. Semaforo
-* // [s]
-* DurataRosso = 60; 
-* DurataGiallo = 20; 
-* DurataVerde = 60;
-* DurataRitardo = 60;
+    * // [s]
+    * DurataRosso = 60; 
+    * DurataGiallo = 20; 
+    * DurataVerde = 60;
+    * DurataRitardo = 60;
 2. Simulazione
-* // [s]
-* Intervallo = 1; 
+    * // [s]
+    * Intervallo = 1; 
 3. GuidatoreTipologia
-* Normale
-* // [s]
-* TempoReazione = 1;
-* // [%]
-* Accelerazione = 0.70;
-* Decelerazione = 0.70;
-* Velocità = 0.70;
-* // [m]
-* DistanzaSicurezza = 3;
-* DistanzaFermi = 1.5;
-* // [m]
-* DistanzaVisione = 50;
-* Prudente
+    * Normale
+    * // [s]
+    * TempoReazione = 1;
+    * // [%]
+    * Accelerazione = 0.70;
+    * Decelerazione = 0.70;
+    * Velocità = 0.70;
+    * // [m]
+    * DistanzaSicurezza = 3;
+    * DistanzaFermi = 1.5;
+    * // [m]
+    * DistanzaVisione = 50;
+    * Prudente
 {
     // [s]
     TempoReazione = 0.85;
