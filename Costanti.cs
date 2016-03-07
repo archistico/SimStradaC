@@ -51,7 +51,7 @@ namespace SimStradaC
             // [s]
             public const double DurataGiallo = 10;
             public const double DurataVerde = 45;
-            public const double DurataSovrapposizioneRosso = 20;
+            public const double DurataSovrapposizioneRosso = 15;
             public const double DurataSicurezza = 5;
 
             public const double DurataRosso = DurataVerde+DurataGiallo+2*DurataSovrapposizioneRosso+2*DurataSicurezza;
