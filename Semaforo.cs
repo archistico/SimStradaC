@@ -17,6 +17,7 @@ namespace SimStradaC
         public double durataVerde;
         public double durataSovrapposizioneRosso;
         public double durataSicurezza;
+        public double tempoMinimoDiPercorrenza;
         public double durataTotale;
 
         private double tempoUltimoCambiamento;
@@ -28,12 +29,14 @@ namespace SimStradaC
             Debug.WriteLine("Durata verde: " + Math.Round(durataVerde, 2));
             Debug.WriteLine("Durata giallo: " + Math.Round(durataGiallo, 2));
             Debug.WriteLine("Durata rosso: " + Math.Round(durataRosso, 2));
+            Debug.WriteLine("Tempo minimo di percorrenza: " + Math.Round(tempoMinimoDiPercorrenza, 2));
             Debug.WriteLine("Durata sovrapposizione rosso: " + Math.Round(durataSovrapposizioneRosso, 2));
             Debug.WriteLine("Durata sicurezza: " + Math.Round(durataSicurezza, 2));
             Debug.WriteLine("Durata totale ciclo: " + Math.Round(durataTotale, 2));
+
         }
 
-        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce)
+        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _tempoMinimoDiPercorrenza)
         {
             stradaDirezione = _stradaDirezione;
             posizioneX = _posizioneX;
@@ -41,22 +44,25 @@ namespace SimStradaC
             durataRosso = DatiGenerali.Semaforo.DurataRosso;
             durataGiallo = DatiGenerali.Semaforo.DurataGiallo;
             durataVerde = DatiGenerali.Semaforo.DurataVerde;
-            durataSovrapposizioneRosso = DatiGenerali.Semaforo.DurataSovrapposizioneRosso;
             durataSicurezza = DatiGenerali.Semaforo.DurataSicurezza;
+
+            tempoMinimoDiPercorrenza = _tempoMinimoDiPercorrenza;
+            durataSovrapposizioneRosso = _tempoMinimoDiPercorrenza + durataSicurezza;
             durataTotale = durataVerde + durataGiallo + durataRosso;
             Debugga();
         }
 
-        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _durataVerde, double _durataGiallo, double _durataSovrapposizioneRosso, double _durataSicurezza)
+        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _durataVerde, double _durataGiallo, double _tempoMinimoDiPercorrenza, double _durataSicurezza)
         {
             stradaDirezione = _stradaDirezione;
             posizioneX = _posizioneX;
             semaforoLuce = _semaforoLuce;
             durataGiallo = _durataGiallo;
             durataVerde = _durataVerde;
-            durataSovrapposizioneRosso = _durataSovrapposizioneRosso;
+            tempoMinimoDiPercorrenza = _tempoMinimoDiPercorrenza;
+            durataSovrapposizioneRosso = _tempoMinimoDiPercorrenza + _durataSicurezza;
             durataSicurezza = _durataSicurezza;
-            durataRosso = durataVerde + durataGiallo + 2 * durataSovrapposizioneRosso + 2 * durataSicurezza;
+            durataRosso = durataVerde + durataGiallo + 2 * tempoMinimoDiPercorrenza + 2 * durataSicurezza;
             durataTotale = durataVerde + durataGiallo + durataRosso;
             Debugga();
         }

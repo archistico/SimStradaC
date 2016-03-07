@@ -54,7 +54,7 @@ namespace SimStradaC
             public const double DurataSovrapposizioneRosso = 15;
             public const double DurataSicurezza = 5;
 
-            public const double DurataRosso = DurataVerde+DurataGiallo+2*DurataSovrapposizioneRosso+2*DurataSicurezza;
+            public const double DurataRosso = DurataVerde+DurataGiallo+2*DurataSovrapposizioneRosso;
         }
 
         public struct Simulazione
@@ -127,7 +127,7 @@ namespace SimStradaC
             public struct Camion
             {
                 // [m/s^2]
-                public const double AccelerazioneMax = 1.75;
+                public const double AccelerazioneMax = 0.75;
                 public const double DecelerazioneMax = 5.5;
                 // [m/s]
                 public const double VelocitàMax = 41;
@@ -139,7 +139,7 @@ namespace SimStradaC
             public struct Macchina
             {
                 // [m/s^2]
-                public const double AccelerazioneMax = 2.75;
+                public const double AccelerazioneMax = 2.85;
                 public const double DecelerazioneMax = 9;
                 // [m/s]
                 public const double VelocitàMax = 55;

@@ -37,8 +37,8 @@ namespace SimStradaC
             var secondo = new Veicolo(VeicoloTipologia.Macchina, Emilie, StradaDirezione.DX, primo);
                         
             // Calcolo tempo di percorrenza
-            double durataSovrapposizioneRosso = Configuratore.TempoMinimoPercorrenza(120, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
-            durataSovrapposizioneRosso = Utilita.ApprossimaMaggiore(durataSovrapposizioneRosso, 5);
+            double tempoMinimoDiPercorrenza = Configuratore.TempoMinimoPercorrenza(120, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
+            double durataSovrapposizioneRosso = Utilita.ApprossimaMaggiore(tempoMinimoDiPercorrenza, 5) + DatiGenerali.Semaforo.DurataSicurezza;
 
             // Creazione semaforo
             var sem = new Semaforo(StradaDirezione.DX, 0, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
