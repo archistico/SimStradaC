@@ -13,9 +13,9 @@ DatiGenerali
 
 1. Semaforo
     * // [s]
-    * DurataRosso = 60; 
-    * DurataGiallo = 20; 
-    * DurataVerde = 60;
+    * DurataRosso = 45; 
+    * DurataGiallo = 10; 
+    * DurataVerde = 95;
     * DurataRitardo = 60;
 2. Simulazione
     * // [s]
