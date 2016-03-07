@@ -7,7 +7,7 @@ Assunti:
 - il guidatore può leggere la velocità del veicolo che precede
 - moto uniformemente accelerato
 
-![alt text](https://github.com/archistico/SimStradaC/blob/master/img/SemaforiTempi.jpg "Semaforo tempi")
+![alt text](https://github.com/archistico/SimStradaC/blob/master/img/SemaforoTempo.jpg "Semaforo tempi")
 
 Da fare
 - [X] dati generali
