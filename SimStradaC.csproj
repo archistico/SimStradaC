@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Configuratore.cs" />
     <Compile Include="Semaforo.cs" />
     <Compile Include="Veicolo.cs" />
     <Page Include="MainWindow.xaml">

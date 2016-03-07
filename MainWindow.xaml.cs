@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace SimStradaC
 {
@@ -49,6 +50,8 @@ namespace SimStradaC
                 
                 Tempo.Ora += DatiGenerali.Simulazione.Intervallo;
             }
+
+            double TP = Configuratore.TempoPercorrenza(100, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
             
             tbRisultati.Text = testoRisultati.ToString();
         }

@@ -49,12 +49,12 @@ namespace SimStradaC
         public struct Semaforo
         {
             // [s]
-            public const double DurataRosso = 60;
-            public const double DurataGiallo = 20;
-            public const double DurataVerde = 60;
-            // Ritardo tra i due semafori [s]
-            // Tempo necessario alla più lenta vettura che passa prima del rosso a percorrere tutta la strada
-            public const double DurataRitardo = 60;
+            public const double DurataGiallo = 10;
+            public const double DurataVerde = 45;
+            public const double DurataSovrapposizioneRosso = 20;
+            public const double DurataSicurezza = 5;
+
+            public const double DurataRosso = DurataVerde+DurataGiallo+2*DurataSovrapposizioneRosso+2*DurataSicurezza;
         }
 
         public struct Simulazione
