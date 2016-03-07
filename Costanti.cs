@@ -127,7 +127,7 @@ namespace SimStradaC
             public struct Camion
             {
                 // [m/s^2]
-                public const double AccelerazioneMax = 2;
+                public const double AccelerazioneMax = 1.75;
                 public const double DecelerazioneMax = 5.5;
                 // [m/s]
                 public const double VelocitàMax = 41;
@@ -140,7 +140,7 @@ namespace SimStradaC
             {
                 // [m/s^2]
                 public const double AccelerazioneMax = 2.75;
-                public const double DecelerazioneMax = 6.5;
+                public const double DecelerazioneMax = 9;
                 // [m/s]
                 public const double VelocitàMax = 55;
                 // [m]
@@ -151,8 +151,8 @@ namespace SimStradaC
             public struct Moto
             {
                 // [m/s^2]
-                public const double AccelerazioneMax = 9;
-                public const double DecelerazioneMax = 7;
+                public const double AccelerazioneMax = 6.25;
+                public const double DecelerazioneMax = 6.5;
                 // [m/s]
                 public const double VelocitàMax = 66;
                 // [m]
