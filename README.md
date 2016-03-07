@@ -1,6 +1,8 @@
 # SimStrada (alpha)
 Simulazione traffico con semaforo
 
+![alt text](https://github.com/archistico/SimStradaC/blob/master/img/StradaCorsie.jpg "Simulazione strada")
+
 Assunti:
 - non sono consentiti i sorpassi
 - non si possono passare i limiti
