@@ -1,4 +1,4 @@
-# SimStradaC
+# SimStrada
 Simulazione traffico con semaforo
 
 Assunti:
