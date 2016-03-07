@@ -1,4 +1,4 @@
-# SimStrada
+# SimStrada (alpha)
 Simulazione traffico con semaforo
 
 Assunti:
@@ -7,3 +7,9 @@ Assunti:
 - il guidatore può leggere la velocità del veicolo che precede
 - moto uniformemente accelerato
 
+Da fare
+- [X] dati generali
+- [X] creazione guidatore
+- [] creazione veicolo
+- [] creazione strada
+- [] creazione semaforo
