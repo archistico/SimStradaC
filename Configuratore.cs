@@ -74,7 +74,6 @@ namespace SimStradaC
             double tempoImpiegato = 0;
             double tempoAccelerazione = 0;
             double tempoUniforme = 0;
-            string tipologiaUscita;
 
             if (spazioRimanente > 0)
             {

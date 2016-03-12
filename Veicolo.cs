@@ -10,7 +10,6 @@ namespace SimStradaC
     {
         private Guidatore guidatore;
         private VeicoloTipologia veicoloTipologia;
-        private Veicolo veicoloPrecede;
 
         public double accelerazioneMax;
         public double decelerazioneMax;
@@ -50,20 +49,10 @@ namespace SimStradaC
             }
         }
         
-        public Veicolo(VeicoloTipologia _veicoloTipologia, Guidatore _guidatore, StradaDirezione _stradaDirezione, Veicolo _veicoloPrecede)
+        public Veicolo(VeicoloTipologia _veicoloTipologia, Guidatore _guidatore)
         {
             veicoloTipologia = _veicoloTipologia;
             guidatore = _guidatore;
-            veicoloPrecede = _veicoloPrecede;
-
-            SetParametriGenerali();
-        }
-
-        public Veicolo(VeicoloTipologia _veicoloTipologia, Guidatore _guidatore, StradaDirezione _stradaDirezione)
-        {
-            veicoloTipologia = _veicoloTipologia;
-            guidatore = _guidatore;
-            veicoloPrecede = null;
 
             SetParametriGenerali();
         }

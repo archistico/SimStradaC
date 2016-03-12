@@ -9,7 +9,6 @@ namespace SimStradaC
 {
     class Semaforo
     {
-        public StradaDirezione stradaDirezione;
         public double posizioneX;
         public SemaforoLuce semaforoLuce;
         public double durataRosso;
@@ -36,9 +35,8 @@ namespace SimStradaC
 
         }
 
-        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _tempoMinimoDiPercorrenza)
+        public Semaforo(double _posizioneX, SemaforoLuce _semaforoLuce, double _tempoMinimoDiPercorrenza)
         {
-            stradaDirezione = _stradaDirezione;
             posizioneX = _posizioneX;
             semaforoLuce = _semaforoLuce;
             durataRosso = DatiGenerali.Semaforo.DurataRosso;
@@ -52,9 +50,8 @@ namespace SimStradaC
             Debugga();
         }
 
-        public Semaforo(StradaDirezione _stradaDirezione, double _posizioneX, SemaforoLuce _semaforoLuce, double _durataVerde, double _durataGiallo, double _tempoMinimoDiPercorrenza, double _durataSicurezza)
+        public Semaforo(double _posizioneX, SemaforoLuce _semaforoLuce, double _durataVerde, double _durataGiallo, double _tempoMinimoDiPercorrenza, double _durataSicurezza)
         {
-            stradaDirezione = _stradaDirezione;
             posizioneX = _posizioneX;
             semaforoLuce = _semaforoLuce;
             durataGiallo = _durataGiallo;

@@ -9,7 +9,7 @@ namespace SimStradaC
     public enum VeicoloTipologia { Camion, Macchina, Moto };
     public enum GuidatoreTipologia { Normale, Prudente, Lento, Brusco };
     public enum SemaforoLuce { Verde, Giallo, Rosso }
-    public enum StradaDirezione { DX, SX }
+    public enum CorsiaDirezione { DX, SX }
 
     static public class Converti
     {

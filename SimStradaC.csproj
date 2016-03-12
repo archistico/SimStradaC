@@ -56,7 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Configuratore.cs" />
+    <Compile Include="Corsia.cs" />
+    <Compile Include="CorsiaParte.cs" />
     <Compile Include="Semaforo.cs" />
+    <Compile Include="Strada.cs" />
     <Compile Include="Utilita.cs" />
     <Compile Include="Veicolo.cs" />
     <Page Include="MainWindow.xaml">

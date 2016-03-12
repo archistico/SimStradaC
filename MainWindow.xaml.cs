@@ -33,15 +33,35 @@ namespace SimStradaC
             var Emilie = new Guidatore(GuidatoreTipologia.Normale);
 
             // Creazioni veicoli
-            var primo = new Veicolo(VeicoloTipologia.Macchina, Emilie, StradaDirezione.DX);
-            var secondo = new Veicolo(VeicoloTipologia.Macchina, Emilie, StradaDirezione.DX, primo);
-                        
+            var primo = new Veicolo(VeicoloTipologia.Macchina, Emilie);
+            var secondo = new Veicolo(VeicoloTipologia.Macchina, Emilie);
+
             // Calcolo tempo di percorrenza
             double tempoMinimoDiPercorrenza = Configuratore.TempoMinimoPercorrenza(120, VeicoloTipologia.Macchina, GuidatoreTipologia.Normale, 17.8);
             double durataSovrapposizioneRosso = Utilita.ApprossimaMaggiore(tempoMinimoDiPercorrenza, 5) + DatiGenerali.Semaforo.DurataSicurezza;
 
             // Creazione semaforo
-            var sem = new Semaforo(StradaDirezione.DX, 0, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
+            var sem = new Semaforo(0, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
+
+            // Creazione corsie parti
+            var cpDX1 = new CorsiaParte(19.44, 100, 3);     // 70 km/h
+            var cpDX2 = new CorsiaParte(13.88, 50, 3);      // 50 km/h
+            var cpDX3 = new CorsiaParte(8.33, 50, 3);       // 30 km/h   --- DEFINIRLE IN COSTANTI SIMULAZIONE ---
+            var cpDX4 = new CorsiaParte(13.88, 50, 3);      // 50 km/h
+            var cpDX5 = new CorsiaParte(19.44, 100, 3);     // 70 km/h
+
+            // Creazione corsia DX
+            var cDX = new Corsia(new List<CorsiaParte> { cpDX1, cpDX2, cpDX3, cpDX4, cpDX5 });
+
+            // Creazione corsia SX
+            var cSX = new Corsia(new List<CorsiaParte> { cpDX1, cpDX2, cpDX3, cpDX4, cpDX5 });
+
+            Debug.WriteLine("Conteggio numero partia corsia: " + cSX.Lista.Count());
+            Debug.WriteLine("Lunghezza corsia: " + cSX.Lunghezza());
+
+            // Creazione strada
+            var strada = new Strada(cDX, cSX);
+            Debug.WriteLine("Lunghezza strada: " + strada.Lunghezza());
 
             // Inizio simulazione
             Tempo.Ora = 0;
@@ -56,10 +76,10 @@ namespace SimStradaC
                 testoRisultati.AppendLine("--------------------------------");
                 testoRisultati.AppendLine("Tempo: " + Converti.FormatoHMS(Tempo.Ora));
                 testoRisultati.AppendLine("Luce : " + sem.semaforoLuce);
-                
+
                 Tempo.Ora += DatiGenerali.Simulazione.Intervallo;
             }
-                     
+
             // Visualizza i risultati
             tbRisultati.Text = testoRisultati.ToString();
         }
