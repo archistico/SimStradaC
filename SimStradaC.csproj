@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Coda.cs" />
     <Compile Include="Configuratore.cs" />
     <Compile Include="Corsia.cs" />
     <Compile Include="CorsiaParte.cs" />

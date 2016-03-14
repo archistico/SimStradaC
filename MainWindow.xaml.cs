@@ -41,7 +41,8 @@ namespace SimStradaC
             double durataSovrapposizioneRosso = Utilita.ApprossimaMaggiore(tempoMinimoDiPercorrenza, 5) + DatiGenerali.Semaforo.DurataSicurezza;
 
             // Creazione semaforo
-            var sem = new Semaforo(0, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
+            var semDX = new Semaforo(150, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
+            var semSX = new Semaforo(200, SemaforoLuce.Verde, DatiGenerali.Semaforo.DurataVerde, DatiGenerali.Semaforo.DurataGiallo, durataSovrapposizioneRosso, DatiGenerali.Semaforo.DurataSicurezza);
 
             // Creazione corsie parti
             var cpDX1 = new CorsiaParte(19.44, 100, 3);     // 70 km/h
@@ -59,9 +60,16 @@ namespace SimStradaC
             Debug.WriteLine("Conteggio numero partia corsia: " + cSX.Lista.Count());
             Debug.WriteLine("Lunghezza corsia: " + cSX.Lunghezza());
 
+            // Creazione coda
+            var codaDX = new Coda(new Queue<Veicolo>(new[] { primo, secondo }));
+
+            Debug.WriteLine("Numero Veicoli in coda: " + codaDX.codaVeicoli.Count()); 
+
             // Creazione strada
-            var strada = new Strada(cDX, cSX);
+            var strada = new Strada(cDX, cSX, semDX, semSX);
             Debug.WriteLine("Lunghezza strada: " + strada.Lunghezza());
+
+
 
             // Inizio simulazione
             Tempo.Ora = 0;
@@ -72,10 +80,10 @@ namespace SimStradaC
             // SIMULAZIONE PER X VOLTE L'INTERVALLO DEFINITO
             for (int i = 0; i < 200; i++)
             {
-                sem.Ciclo();
+                semDX.Ciclo();
                 testoRisultati.AppendLine("--------------------------------");
                 testoRisultati.AppendLine("Tempo: " + Converti.FormatoHMS(Tempo.Ora));
-                testoRisultati.AppendLine("Luce : " + sem.semaforoLuce);
+                testoRisultati.AppendLine("Luce : " + semDX.semaforoLuce);
 
                 Tempo.Ora += DatiGenerali.Simulazione.Intervallo;
             }

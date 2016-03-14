@@ -166,8 +166,8 @@ namespace SimStradaC
             public struct Afflusso
             {
                 // [macchine/sec]
-                public const double velocitàDX = 0.25;
-                public const double velocitàSX = 0.20;
+                public const double frequenzaDX = 0.25;
+                public const double frequenzaSX = 0.20;
                 // [%]
                 public const double variazioneDX = 0.30;
                 public const double variazioneSX = 0.30;
@@ -180,18 +180,7 @@ namespace SimStradaC
                 public const double percentualeCamion = 0.20;
             }
         }
-
-        public struct StradaMisure
-        {
-            // [m/s] 
-            // km/h in m/s -> x1000/3600
-            public const double velocitàMaxPercorrenza = 13.88;
-            // [m]
-            public const double distanzaSemafori = 120;
-            public const double distanzaStradaDX = 200;
-            public const double distanzaStradaSX = 200;
-        }
-        
+       
     }
     
 }
